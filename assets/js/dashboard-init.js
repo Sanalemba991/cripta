@@ -18,7 +18,7 @@
 
   function walletChart() {
     var options = {
-      series: [40, 40, 20],
+      series: [60, 40], // Changed to only 2 values (Success, Failures)
       chart: {
         width: 300,
         type: "pie",
@@ -42,8 +42,8 @@
           enabled: false,
         },
       },
-      labels: ["Bitcoin", "Ethereum", "Tether"],
-      colors: ["#EF8E19", "#5F658B", "#4DAA90"],
+      labels: ["Failures", "Success"], // Changed labels to Failures and Success
+      colors: ["#EF8E19", "#4DAA90"], // You can adjust colors as you like
       legend: {
         show: false,
       },
@@ -52,6 +52,7 @@
     var chart = new ApexCharts(document.querySelector("#walletChart"), options);
     chart.render();
   }
+  
   // Overview
   function overview(color, i) {
     var options = {
